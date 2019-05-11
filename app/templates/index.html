@@ -2,4 +2,9 @@
 
 {% block content %}
     <h1>This is index.html</h1>
+    {% for story in stories %}
+        <div> <!--set class="beautiful ramochka"-->
+            <p>{{story.name}}</p>
+        </div>
+    {% endfor %}
 {% endblock %}
