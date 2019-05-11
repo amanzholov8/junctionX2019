@@ -1,4 +1,4 @@
-let paragraph1 = $('#id0').text()
+let paragraph1 = $('#div0').text()
 console.log(paragraph1);
 (function sayParagraph(curParagraph) {
     var form = new FormData();
