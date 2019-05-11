@@ -16,13 +16,22 @@
 				<i class="fas fa-microphone fa-4x" style="color: #398B39"></i>
 			</div>
 		</div>
-		<div class='col-sm-8'></div>
+		<div class='col-sm-8'>
+			{% for paragraph in paragraphs %}
+			<div id = {{paragraph.id}}>{{paragraph.content}}</div>
+			{% endfor %}
+		</div>
 		<div class='col-sm-2'></div>
 	</div>
+	<!-- <audio controls id='dom-audio'>
+			<source src="{{ url_for('static', filename='assets/narr.mp3') }}" type="file/mpeg">
+	</audio>-->
 </div>
 
 {% endblock %}
 
 {% block js%}
+	
 	<script src="{{ url_for('static', filename='js/audioplay.js') }}" type='text/javascript'></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.js"></script>
 {% endblock%}
