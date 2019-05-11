@@ -5,6 +5,8 @@ from flask import render_template
 
 from flask_fontawesome import FontAwesome
 
+from utils import nlp
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -23,3 +25,10 @@ def index():
 @app.route('/reader')
 def reader():
     return render_template('audioplay.html')
+
+@app.route('/receive_audio', methods=['POST'])
+def command():
+    #data = request.get_json()
+    #text = sst(data)
+    text = 'Go back to four sentences'
+    return nlp.identify(text)
