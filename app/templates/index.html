@@ -6,10 +6,14 @@
 	    <span class="fas fa-book-open"></span>
 	    Smart Audio Book
 	  </span>
+	  <div class="float-lg-right">
+	  	<img src="../assets/naverlogo" height="10rem" width="10rem" />
+	  	Powered by NAVER Cloud Platform
+	  </div>
 	</nav>	
   <h2>Choose the book from the shelf</h2>
   {% for story in stories %}
-      <div> <!--set class="beautiful ramochka"-->
+      <div class="col-sm-4">
           <p class='lead'>{{story.name}}</p>
       </div>
   {% endfor %}
