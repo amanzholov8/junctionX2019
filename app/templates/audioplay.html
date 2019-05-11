@@ -16,16 +16,6 @@
 				<i class="fas fa-microphone fa-4x" style="color: #398B39"></i>
 			</div>
 		</div>
-<<<<<<< Updated upstream
-		<div class='col-sm-8'>
-			{% for paragraph in paragraphs %}
-			<div id = {{paragraph.id}}>{{paragraph.content}}</div>
-			{% endfor %}
-		</div>
-||||||| merged common ancestors
-		<div class='col-sm-8'></div>
-=======
-		
 		<div class='col-sm-8'>
 			<h1>{{book.title}}</h1>
 			{% for ind in range(0, book.paragraphs|length) %}
@@ -34,8 +24,6 @@
 				</div>
 			{% endfor %}
 		</div>
-
->>>>>>> Stashed changes
 		<div class='col-sm-2'></div>
 	</div>
 	<!-- <audio controls id='dom-audio'>
@@ -48,10 +36,6 @@
 {% block js%}
 	
 	<script src="{{ url_for('static', filename='js/audioplay.js') }}" type='text/javascript'></script>
-<<<<<<< Updated upstream
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.js"></script>
-||||||| merged common ancestors
-=======
 	<script src="{{ url_for('static', filename='js/scroll.js') }}" type='text/javascript'></script>
->>>>>>> Stashed changes
 {% endblock%}
