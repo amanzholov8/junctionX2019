@@ -1,7 +1,10 @@
-def identify(text):
-    textList = text.split()
+def identify(user_message):
+    return {'category': 'question_message'}
+
+    '''textList = user_message.split()
     textDict = dict()
-    nums = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9}
+    num_dict = {'zero':0, 'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9}
+    nums = num_dict.keys
     amount = 0
 
     for word in textList:
@@ -10,7 +13,7 @@ def identify(text):
         textDict[word.lower()] = 1
 
     if 'go' in textDict:
-        res =  {'category': 'navigation'}
+        res =  {'category': 'navigation_message'}
 
         if 'back' in textDict or 'previous' in textDict:
             res['dir'] = 'back'
@@ -29,8 +32,7 @@ def identify(text):
 
         return res
 
-    elif 'definition' in textDict:
-        return {'category': 'google', 'text': text}
-    
-    else:
-        return 'Hello World'
+    #elif 'search for' in textDict:
+
+    #else:
+    '''
