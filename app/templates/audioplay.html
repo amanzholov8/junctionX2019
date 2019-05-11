@@ -10,10 +10,10 @@
 			</div>
 
 			<div id="play">
-				<i class="fas fa-play fa-6x"></i>
+				<i class="fas fa-play fa-4x" style="color: #398B39"></i>
 			</div>
 			<div id="microphone">
-				<i class="fas fa-microphone fa-6x"></i>
+				<i class="fas fa-microphone fa-4x" style="color: #398B39"></i>
 			</div>
 		</div>
 		<div class='col-sm-8'></div>
@@ -22,3 +22,7 @@
 </div>
 
 {% endblock %}
+
+{% block js%}
+	<script src="{{ url_for('static', filename='js/audioplay.js') }}" type='text/javascript'></script>
+{% endblock%}
