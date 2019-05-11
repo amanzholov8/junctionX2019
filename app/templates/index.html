@@ -6,6 +6,7 @@
 	    <span class="fas fa-book-open"></span>
 	    Smart Audio Book
 	  </span>
+<<<<<<< HEAD
 	</nav>	
   <h2>Choose the book from the shelf</h2>
 	<div class="container" id="bookshelf">
@@ -18,6 +19,35 @@
 			    </div>
 			  </div>
 	  {% endfor %}
+||||||| merged common ancestors
+	</nav>	
+  <h2>Choose the book from the shelf</h2>
+	<div class="main-content">
+	  {% for story in stories %}
+	      <div class="col-sm-4">
+	          <p class='lead'>{{story.name}}</p>
+	      </div>
+	  {% endfor %}
+	  <a href="{{ url_for('reader') }}">Reader</a>
+=======
+	</nav>
+	<div class="main-content container-fluid mt-4">
+		<div class="row justify-content-center">
+				{% for story in stories %}
+					<div class="col-auto mb-3">
+						<div class="card book">
+							<img src="{{story.img}}" class="card-img-top">
+							<div class="card-body">
+								<h5 class="card-title">{{story.name}}</h5>
+								<p class="card-text">{{story.author}}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+	  <a href="{{ url_for('reader') }}">Reader</a>
+>>>>>>> 8e73ccd89085e3c320c0738464824d9e21ceda7c
 	</div>
 
 	<footer class="footer page-footer pt-2">
@@ -70,5 +100,5 @@
 	  </div>
 	  <!-- Copyright -->
 
-	</footer>  
+	</footer>
 {% endblock %}

@@ -27,6 +27,7 @@
 .footer {
 	background: #F8F9FA;
 	margin-top: 0rem;
+<<<<<<< HEAD
 }
 
 .card-columns {
@@ -38,3 +39,17 @@
   }
 }
 
+||||||| merged common ancestors
+}
+=======
+}
+
+.book {
+    width: 18rem;
+    max-height: 40rem;
+}
+
+.navbar-brand {
+    font-size: 3rem;
+}
+>>>>>>> 8e73ccd89085e3c320c0738464824d9e21ceda7c
