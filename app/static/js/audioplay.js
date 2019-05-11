@@ -83,7 +83,7 @@ console.log(paragraph1);
 
             var au = new Audio();  
             au.src = audio;
-            console.log(au);
+            //console.log(au);
             au.load();
             au.play();
             /*au.play().catch(() => {

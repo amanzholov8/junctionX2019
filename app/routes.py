@@ -69,7 +69,7 @@ def narration():
     #print(data)
     text = request.form['text']
     #print(text)
-    response = mediator.sendChunkText(text)
+    response = mediator.text_to_audio(text)
     #new_file = '{}/{}'.format(url_for('static'), 'assets/narr123.mp3')
     with open('narr.mp3', 'wb') as f:
         f.write(response)
