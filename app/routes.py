@@ -3,6 +3,8 @@ from app import fa
 
 from flask import render_template
 
+from flask_fontawesome import FontAwesome
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -17,3 +19,7 @@ def index():
         }
     ]
     return render_template('index.html', stories=stories)
+
+@app.route('/reader')
+def reader():
+    return render_template('audioplay.html')
