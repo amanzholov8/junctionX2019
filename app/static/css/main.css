@@ -22,3 +22,12 @@
 	background: #F8F9FA;
 	margin-top: 0rem;
 }
+
+.book {
+    width: 18rem;
+    max-height: 40rem;
+}
+
+.navbar-brand {
+    font-size: 3rem;
+}

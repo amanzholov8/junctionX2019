@@ -6,14 +6,22 @@
 	    <span class="fas fa-book-open"></span>
 	    Smart Audio Book
 	  </span>
-	</nav>	
-  <h2>Choose the book from the shelf</h2>
-	<div class="main-content">
-	  {% for story in stories %}
-	      <div class="col-sm-4">
-	          <p class='lead'>{{story.name}}</p>
-	      </div>
-	  {% endfor %}
+	</nav>
+	<div class="main-content container-fluid mt-4">
+		<div class="row justify-content-center">
+				{% for story in stories %}
+					<div class="col-auto mb-3">
+						<div class="card book">
+							<img src="{{story.img}}" class="card-img-top">
+							<div class="card-body">
+								<h5 class="card-title">{{story.name}}</h5>
+								<p class="card-text">{{story.author}}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
 	  <a href="{{ url_for('reader') }}">Reader</a>
 	</div>
 
@@ -67,5 +75,5 @@
 	  </div>
 	  <!-- Copyright -->
 
-	</footer>  
+	</footer>
 {% endblock %}
