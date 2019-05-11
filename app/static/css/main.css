@@ -13,9 +13,18 @@
     color: #398B39;
 }
 
+.article{
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.control {
+    height:100vh;
+}
+
 .main-content {
 	min-height: 25rem;
-	margin-bottom: 0rem;
+    margin-bottom: 0rem;
 }
 
 .card {
