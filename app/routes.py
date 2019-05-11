@@ -3,6 +3,8 @@ from app import fa
 
 from flask import render_template, request
 
+import json
+
 from flask_fontawesome import FontAwesome
 
 from utils import nlp
@@ -26,10 +28,13 @@ def index():
 def reader():
     return render_template('audioplay.html')
 
-@app.route('/receive_audio', methods=['POST'])
+@app.route('/receive_audio', methods=['GET'])
 def command():
     #TODO: (@Kunduz, @Alim)
-    print(request.data)
+    print(request.args)
+    data = request.get_json()
+    print(data)
     #text = sst(data)
-    text = 'Go back to four sentences'
-    return nlp.identify(text)
+    #text = 'Go back to four sentences'
+    #return nlp.identify(text)
+    return 'yes'

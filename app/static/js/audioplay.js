@@ -43,8 +43,15 @@ const sleep = time => new Promise(resolve => setTimeout(resolve, time));
     await sleep(3000);
     const audio = await recorder.stop();
     audio.play();
-    $.post('receive_audio', audio.audioUrl, function(data){
-        console.log('Audio URL sent!');
-        console.log(data);
+    // audio.audioUrl
+
+    $.ajax({
+        type: 'GET',
+        url: '/receive_audio',
+        data: 'hello',
+        success: function(data){
+            console.log('Audio URL sent!');
+            console.log(data);
+        }
     });
 })();
