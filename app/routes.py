@@ -10,13 +10,47 @@ from flask_fontawesome import FontAwesome
 def index():
     stories = [
         {
-            'name': 'My Little Pony',
+            'title': 'My Little Pony',
+            'short_description': 'Interesting book about ponnies.',
+            'src': "ponnies.jpg",
             'content': 'Once in a while ...'
         },
         {
-            'name': 'Kazakh National Fairytale: Aldar Kose',
+            'title': 'Aldar Kose',
+            'short_description': 'Kazakh national fairytale about rich and poor',
+            'src': "aldar_kose.jpg",
             'content': 'In the Kazakh steppes ...'
-        }
+        },
+        {
+            'title': 'My Little Pony',
+            'short_description': 'Interesting book about ponnies.',
+            'src': "ponnies.jpg",
+            'content': 'Once in a while ...'
+        },
+        {
+            'title': 'My Little Pony',
+            'short_description': 'Interesting book about ponnies.',
+            'src': "ponnies.jpg",
+            'content': 'Once in a while ...'
+        },
+        {
+            'title': 'My Little Pony',
+            'short_description': 'Interesting book about ponnies.',
+            'src': "ponnies.jpg",
+            'content': 'Once in a while ...'
+        },
+        {
+            'title': 'My Little Pony',
+            'short_description': 'Interesting book about ponnies.',
+            'src': "ponnies.jpg",
+            'content': 'Once in a while ...'
+        },
+        {
+            'title': 'My Little Pony',
+            'short_description': 'Interesting book about ponnies.',
+            'src': "ponnies.jpg",
+            'content': 'Once in a while ...'
+        }             
     ]
     return render_template('index.html', stories=stories)
 

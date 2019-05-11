@@ -8,17 +8,20 @@
 	  </span>
 	</nav>	
   <h2>Choose the book from the shelf</h2>
-	<div class="main-content">
+	<div class="container" id="bookshelf">
 	  {% for story in stories %}
-	      <div class="col-sm-4">
-	          <p class='lead'>{{story.name}}</p>
-	      </div>
+				<div class="card p-3">
+			    <img src="{{ url_for('static', filename='assets/')}}{{story.src}}" class="card-img-top">
+			    <div class="card-block">
+			      <h5 class="card-title">{{story.title}}</h5>
+			      <p class="card-text">{{story.short_description}}</p>
+			    </div>
+			  </div>
 	  {% endfor %}
-	  <a href="{{ url_for('reader') }}">Reader</a>
 	</div>
 
 	<footer class="footer page-footer pt-2">
-
+		<a href="{{ url_for('reader') }}">Reader</a>
 	  <!-- Footer Links -->
 	  <div class="container-fluid text-center text-lg-left">
 
