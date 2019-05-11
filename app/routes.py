@@ -17,12 +17,14 @@ import requests
 def index():
     stories = [
         {
-            'name': 'My Little Pony',
-            'content': 'Once in a while ...'
+            'name': 'The Sea Wolf',
+            'author': 'Jack London',
+            'img': 'https://images-na.ssl-images-amazon.com/images/I/5169HPG833L._SX312_BO1,204,203,200_.jpg'
         },
         {
-            'name': 'Kazakh National Fairytale: Aldar Kose',
-            'content': 'In the Kazakh steppes ...'
+            'name': 'Kill the mocking bird',
+            'author': 'Harper Lee',
+            'img': 'https://upload.wikimedia.org/wikipedia/en/thumb/7/79/To_Kill_a_Mockingbird.JPG/220px-To_Kill_a_Mockingbird.JPG'
         }
     ]
     return render_template('index.html', stories=stories)
