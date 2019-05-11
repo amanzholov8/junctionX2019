@@ -1,7 +1,7 @@
 from app import app
 from app import fa
 
-from flask import render_template
+from flask import render_template, request
 
 from flask_fontawesome import FontAwesome
 
@@ -28,7 +28,8 @@ def reader():
 
 @app.route('/receive_audio', methods=['POST'])
 def command():
-    #data = request.get_json()
+    #TODO: (@Kunduz, @Alim)
+    print(request.data)
     #text = sst(data)
     text = 'Go back to four sentences'
     return nlp.identify(text)
