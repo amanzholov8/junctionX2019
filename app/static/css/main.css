@@ -1,14 +1,24 @@
 #back {
-    margin-top: 1.5em;
-    margin-left: 1em;
+    margin-top: 1em;
+    color: #398B39;
 }
 
 #play {
-    margin-top: 15em;
-    margin-left: 1em;
+    margin-top: 12em;
+    color: #398B39;
 }
 
 #microphone {
-    margin-top: 15em;
-    margin-left: 1em;
+    margin-top: 2em;
+    color: #398B39;
+}
+
+.main-content {
+	min-height: 25rem;
+	margin-bottom: 0rem;
+}
+
+.footer {
+	background: #F8F9FA;
+	margin-top: 0rem;
 }
