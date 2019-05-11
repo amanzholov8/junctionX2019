@@ -5,8 +5,6 @@ from flask import render_template
 
 from flask_fontawesome import FontAwesome
 
-fa = FontAwesome(app)
-
 @app.route('/')
 @app.route('/index')
 def index():
