@@ -33,13 +33,12 @@ def text_to_audio(text):
         return "Error code: {}".format(r.status_code)
 
 #Not tested yet
-def audio_to_text(url):
-    data = requests.get(url).content
+def audio_to_text(sound_data):
     Eng = "?lang=" + "Eng"
-    response = requests.post(CSR_URL+Eng,  data=data, headers=CSR_headers)
+    response = requests.post(CSR_URL+Eng, sound_data, headers=CSR_headers)
     rescode = response.status_code
     if(rescode == 200):
-        return response.text
+        return response.json()
     else:
         return "Error : " + response.text
 

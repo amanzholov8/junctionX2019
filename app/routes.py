@@ -50,19 +50,12 @@ def reader():
 
 @app.route('/receive_audio', methods=['POST'])
 def command():
-    #data = request.files['audio'].stream.read()
-    #with open('tmp123456.wav', 'wb') as f:
+    data = request.files['audio_data'].stream.read()
+    #with open('request.wav', 'wb') as f:
     #    f.write(data)
-    #print(data)
-    #with open('tmp123.mp3', 'wb') as f:
-    #    f.write(requests.get(url).content)
-    #return 'yes'
-    #text = mediator.sendAudioQuestion(url)
-    #text = 'Go back to four sentences'
-    #print(text)
-    #req = nlp.identify(text)
-    #send it to fronend req
-    return 'yes'
+    text = mediator.audio_to_text(data)
+    print(text['text'])
+    return text['text']
 
 @app.route('/narrator', methods=['POST'])
 def narration():
