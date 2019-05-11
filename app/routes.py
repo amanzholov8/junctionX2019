@@ -1,4 +1,5 @@
 from app import app
+from app import fa
 
 from flask import render_template
 

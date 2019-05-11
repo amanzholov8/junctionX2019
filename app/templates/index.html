@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>This is index.html</h1>
-    {% for story in stories %}
-        <div> <!--set class="beautiful ramochka"-->
-            <p class='lead'>{{story.name}}</p>
-        </div>
-    {% endfor %}
-    <a href="{{ url_for('reader') }}">Reader</a>
+	<nav class="navbar navbar-light bg-light">
+	  <span class="navbar-brand">
+	    <span class="fas fa-book-open"></span>
+	    Smart Audio Book
+	  </span>
+	</nav>	
+  <h2>Choose the book from the shelf</h2>
+  {% for story in stories %}
+      <div> <!--set class="beautiful ramochka"-->
+          <p class='lead'>{{story.name}}</p>
+      </div>
+  {% endfor %}
+  <a href="{{ url_for('reader') }}">Reader</a>
 {% endblock %}
