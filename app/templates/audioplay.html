@@ -4,7 +4,7 @@
 
 <div class='container-fluid'>
 	<div class='row'>
-		<div class='col-sm-2'>
+		<div class='col-sm-1' id='reader-controls'>
 			<div id="back">
 				<a href="{{ url_for('index') }}"><i class="fas fa-chevron-circle-left fa-4x"></i></a>
 			</div>
@@ -16,6 +16,7 @@
 				<i class="fas fa-microphone fa-4x" style="color: #398B39"></i>
 			</div>
 		</div>
+		<div class='col-sm-1'></div>
 		<div class='col-sm-8'>
 			<h1>{{book.title}}</h1>
 			{% for ind in range(0, book.paragraphs|length) %}
