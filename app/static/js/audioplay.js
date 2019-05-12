@@ -69,6 +69,7 @@ function startRecording() {
         console.log("The recording has started");
 
     }).catch(function (err) {
+        //console.log(window.current_paragraph)
         console.log("Some failure occured during recording");
     });
 }
@@ -88,7 +89,10 @@ function stopRecording() {
 function uploadToServer(blob) {
     console.log('uploading');
     var fd = new FormData();
+    console.log(window.current_paragraph);
     fd.append("audio_data", blob, 'hello.wav');
+    fd.append("paragraph", window.current_paragraph);
+    console.log(fd);
     $.ajax({
         type: 'POST',
         url: '/receive_audio',

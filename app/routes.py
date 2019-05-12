@@ -12,6 +12,8 @@ from utils import nlp, mediator
 
 import requests
 
+
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -47,11 +49,17 @@ def reader():
 @app.route('/receive_audio', methods=['POST'])
 def command():
     data = request.files['audio_data'].stream.read()
+    paragraph=request.files['paragraph'].stream.read()
+    print(paragraph)
     #with open('request.wav', 'wb') as f:
     #    f.write(data)
     text = mediator.audio_to_text(data)
+    res = nlp.identify(paragraph, text['text'])
+    print(paragraph)
+    print(res)
     print(text['text'])
-    return text['text']
+    return res
+    #return 'yes'
 
 @app.route('/narrator', methods=['POST'])
 def narration():

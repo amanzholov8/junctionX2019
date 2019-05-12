@@ -1,7 +1,7 @@
 var active = false;
 currentPos = 1;
 
-/*
+
 function scroll() {
     while (active) {
         currentPos += 1;
@@ -12,7 +12,9 @@ function scroll() {
         delay(400);
     };
 };
-*/
+
+window.current_paragraph = $(`#div${currentPos-1}`).text();
+
 function scroll() {
     if(!active){
         return;
