@@ -29,7 +29,7 @@ def index():
     ]
     return render_template('index.html', stories=stories)
 
-@app.route('/reader')
+@app.route('/reader/')
 def reader():
     book = {
         'title': 'Jack London',

@@ -61,6 +61,7 @@
 
 .navbar-brand {
     font-size: 3rem;
+    font-family: Helvetica, sans-serif;
 }
 
 .book {
@@ -70,4 +71,9 @@
 
 .navbar-brand {
     font-size: 3rem;
+}
+
+#reader-controls {
+    background-color: #F8F9FA;
+    text-align: center;
 }

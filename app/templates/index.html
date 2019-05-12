@@ -10,8 +10,10 @@
 	<div class="main-content container-fluid mt-4">
 		<div class="row justify-content-center">
 				{% for story in stories %}
-					<div class="col-auto mb-3">
-						<div class="card book">
+				<form action="/reader/">
+				<a href="{{url_for('reader')}}">
+					<div class="col-auto mb-3 book">
+						<div class="card">
 							<img src="{{story.img}}" class="card-img-top">
 							<div class="card-body">
 								<h5 class="card-title">{{story.name}}</h5>
@@ -19,12 +21,14 @@
 							</div>
 						</div>
 					</div>
+				</a>
+			  </form>
 				{% endfor %}
 			</div>
 	</div>
 
 	<footer class="footer page-footer pt-2">
-		<a href="{{ url_for('reader') }}">Reader</a>
+		<!-- <a href="{{ url_for('reader') }}">Reader</a> -->
 	  <!-- Footer Links -->
 	  <div class="container-fluid text-center text-lg-left">
 
