@@ -1,9 +1,18 @@
-let paragraph1 = $('#div0').text()
-console.log(paragraph1);
-(function sayParagraph(curParagraph) {
-    var form = new FormData();
-    form.append('text', curParagraph);
+var paragraphs = $('.paragraph');
+//var audios = new Array(paragraphs.length).fill(null);
+var speaker = null; // Howler.js instance
+var curParagraph = 0;
+var isPlaying = false;
 
+function sayParagraph(curParagraph) {
+    if(curParagraph >= paragraphs.length){
+        speaker = null;
+        curParagraph = 0;
+        isPlaying = false;
+        return;
+    }
+    var form = new FormData();
+    form.append('text', paragraphs[curParagraph]);
     $.ajax({
         type: 'POST',
         url: '/narrator',
@@ -11,17 +20,32 @@ console.log(paragraph1);
         processData: false,
         contentType: false,
         success: (audio) => {
-            var sound = new Howl({
+            speaker = new Howl({
                 src: [audio],
                 autoplay: true,
                 volume: 1
             });
-            sound.once('load', () => {
-                sound.play();
+            speaker.once('load', () => {
+                speaker.play();
             })
+            speaker.once('end', () => {
+                sayParagraph(curParagraph + 1);
+            });
         }
     });
-})(paragraph1);
+}
+
+function playStream(){
+    if(!speaker)
+        sayParagraph(curParagraph);
+    else
+        speaker.play();
+}
+
+function pauseStream(){
+    if(speaker)
+        speaker.pause();
+}
 
 function startRecording() {
     var constraints = {
@@ -71,16 +95,35 @@ function uploadToServer(blob) {
         data: fd,
         processData: false,
         contentType: false,
-        success: (data) => {
-            console.log('we made it');
-            console.log(data);
-        }
+        success: commandHandler
     });
 }
 
-function something() {
+function giveCommand() {
     startRecording();
     setTimeout(stopRecording, 3500);
 }
 
-something();
+function commandHandler(command) {
+    console.log('This is the command you send me');
+    console.log(command);
+}
+
+$(document).ready(function(){
+
+});
+
+$('#play').click(function(){
+    if(!isPlaying){
+        playStream();
+        isPlaying = true;
+    }
+    else {
+        pauseStream();
+        isPlaying = false;
+    }
+});
+
+$('#microphone').click(function(){
+    giveCommand();
+});

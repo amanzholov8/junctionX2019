@@ -1,16 +1,23 @@
 #back {
     margin-top: 1em;
-    color: #398B39;
 }
 
 #play {
     margin-top: 12em;
-    color: #398B39;
+    color: #007bff;
 }
 
 #microphone {
     margin-top: 2em;
-    color: #398B39;
+    color: #007bff;
+}
+
+#play:hover {
+    color: #0056b3;
+}
+
+#microphone:hover {
+    color: #0056b3;
 }
 
 .article{
