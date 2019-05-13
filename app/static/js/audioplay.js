@@ -1,4 +1,8 @@
 var paragraphs = $('.paragraph');
+var paragraphs1 = [];
+for(let i = 0; i < paragraphs.length; ++i){
+    paragraphs1.push(paragraphs[i].textContent);
+}
 //var audios = new Array(paragraphs.length).fill(null);
 var speaker = null; // Howler.js instance
 var curParagraph = 0;
@@ -12,7 +16,7 @@ function sayParagraph(curParagraph) {
         return;
     }
     var form = new FormData();
-    form.append('text', paragraphs[curParagraph]);
+    form.append('text', paragraphs1[curParagraph]);
     $.ajax({
         type: 'POST',
         url: '/narrator',
@@ -110,7 +114,8 @@ function giveCommand() {
 
 function commandHandler(command) {
     console.log('This is the command you send me');
-    console.log(command);
+    //console.log(command);
+    alert('The answer is: ' + command);
 }
 
 $(document).ready(function(){

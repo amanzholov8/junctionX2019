@@ -1,6 +1,9 @@
 var active = false;
 currentPos = 1;
 
+const fontSize = $(".col-sm-8").css('font-size');
+const lineHeight = Math.floor(parseInt(fontSize.replace('px','')) * 1.5);
+
 
 function scroll() {
     while (active) {
@@ -22,7 +25,7 @@ function scroll() {
     currentPos += 1;
     $('html, body').animate({
         scrollTop: $(`#div${currentPos}`).offset().top
-    }, 4000);
+    }, getTime($(`#div${currentPos - 1}`).text()) * 1000);
     setTimeout(scroll, 2000);
 }
 
@@ -40,3 +43,9 @@ $("#play").on("click", function () {
     active = true;
     scroll();
 });
+
+function getTime(str) {
+   const lineNumber = str.length/50;
+   const timePerLine = lineNumber * 3;
+   return timePerLine;
+}

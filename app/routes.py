@@ -34,7 +34,7 @@ def index():
 @app.route('/reader/')
 def reader():
     book = {
-        'title': 'Jack London',
+        'title': 'Sea Wolf',
         'paragraphs': [
             "I scarcely know where to begin, though I sometimes facetiously place the cause of it all to Charley Furuseth's credit. He kept a summer cottage in Mill Valley, under the shadow of Mount Tamalpais, and never occupied it except when he loafed through the winter months and read Nietzsche and Schopenhauer to rest his brain. When summer came on, he elected to sweat out a hot and dusty existence in the city and to toil incessantly. Had it not been my custom to run up to see him every Saturday afternoon and to stop over till Monday morning, this particular January Monday morning would not have found me afloat on San Francisco Bay.",
             "Not but that I was afloat in a safe craft, for the Martinez was a new ferry-steamer, making her fourth or fifth trip on the run between Sausalito and San Francisco. The danger lay in the heavy fog which blanketed the bay, and of which, as a landsman, I had little apprehension. In fact, I remember the placid exaltation with which took up my position on the forward upper deck, directly beneath the pilot-house, and allowed the mystery of the fog to lay hold of my imagination. A fresh breeze was blowing, and for a time I was alone in the moist obscurity; yet not alone, for I was dimly conscious of the presence of the pilot, and of what I took to be the captain, in the glass house above my head.",
@@ -49,11 +49,11 @@ def reader():
 @app.route('/receive_audio', methods=['POST'])
 def command():
     data = request.files['audio_data'].stream.read()
-    
+
     #with open('request.wav', 'wb') as f:
     #    f.write(data)
     text = mediator.audio_to_text(data)
-    
+
     ps = [
             "I scarcely know where to begin, though I sometimes facetiously place the cause of it all to Charley Furuseth's credit. He kept a summer cottage in Mill Valley, under the shadow of Mount Tamalpais, and never occupied it except when he loafed through the winter months and read Nietzsche and Schopenhauer to rest his brain. When summer came on, he elected to sweat out a hot and dusty existence in the city and to toil incessantly. Had it not been my custom to run up to see him every Saturday afternoon and to stop over till Monday morning, this particular January Monday morning would not have found me afloat on San Francisco Bay.",
             "Not but that I was afloat in a safe craft, for the Martinez was a new ferry-steamer, making her fourth or fifth trip on the run between Sausalito and San Francisco. The danger lay in the heavy fog which blanketed the bay, and of which, as a landsman, I had little apprehension. In fact, I remember the placid exaltation with which took up my position on the forward upper deck, directly beneath the pilot-house, and allowed the mystery of the fog to lay hold of my imagination. A fresh breeze was blowing, and for a time I was alone in the moist obscurity; yet not alone, for I was dimly conscious of the presence of the pilot, and of what I took to be the captain, in the glass house above my head.",

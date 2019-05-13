@@ -8,6 +8,6 @@ def get_model():
     return model
     #model = build_model(configs.squad.squad, download=False)
 
-def answer(text, question, model):
+def answer(text, question):
     return model([text], [question])
     #return 'hello world'
